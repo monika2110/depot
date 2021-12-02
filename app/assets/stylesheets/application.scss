@@ -1,11 +1,10 @@
-//
 /*
- * This is a manifest file that'll be compiled into application.css,
- * which will include all the files listed below.
+ * This is a manifest file that'll be compiled into application.css, which will
+ * include all the files listed below.
  *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be
- * referenced here using a relative path.
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any
+ * plugin's vendor/assets/stylesheets directory can be referenced here using a
+ * relative path.
  *
  * You're free to add application-wide styles to this file and they'll appear
  * at the bottom of the compiled file so the styles you add here take
@@ -43,8 +42,6 @@ header.main {
   padding: 1em 1.414em;
   text-align: center;
 }
-//
-//
 .content {
   margin: 0;
   padding: 0;
@@ -67,6 +64,21 @@ header.main {
     @media (min-width: 30em) {
       text-align: left; // desktop nav is left-aligned
       padding: 1em;     // and needs more padding
+    }
+
+    #cart {
+      article {
+        h2 {
+          margin-top: 0;
+        }
+        background: white;
+        border-radius: 0.5em;
+        margin: 1em;
+        padding: 1.414em;
+        @media (min-width: 30em) {
+          margin: 0; // desktop doesn't need this margin
+        }
+      }
     }
     ul {
       list-style: none;
@@ -95,4 +107,3 @@ header.main {
     padding: 0.5em;
   }
 }
-//
