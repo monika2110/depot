@@ -1,25 +1,12 @@
-# README
+# Depot webshop application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Made with Rails 6 and Ruby 3.0.2
 
-Things you may want to cover:
+## System Requirement
 
-* Ruby version
+* Mac, Windows or Linux PC
 
-* System dependencies
 
-* Configuration
+## Database 
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-* nova linja
+* This project uses SQLite3
