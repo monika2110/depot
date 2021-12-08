@@ -11,11 +11,15 @@
 
 <body>
 <header class="main">
+  <h4><%= "You've visited this page #{pluralize(@counter, "time")}" %></h4>
   <%= image_tag 'logo.svg', alt: 'The Pragmatic Bookshelf' %>
   <h1><%= @page_title %></h1>
 </header>
 <section class="content">
   <nav class="side_nav">
+
+    <div id="time">
+      <%= @time %></div>
 
     <div id="cart" class="carts">
 
