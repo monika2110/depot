@@ -4,7 +4,6 @@ class StoreController < ApplicationController
 
   def count
     if session[:counter].nil?
-
       session[:counter] = 0
     end
     session[:counter] += 1

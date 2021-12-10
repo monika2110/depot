@@ -56,4 +56,8 @@ class CartsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to store_index_url
   end
+
+  test "should add unique products and duplicate " do
+
+  end
 end
