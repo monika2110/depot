@@ -58,6 +58,14 @@ class CartsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should add unique products and duplicate " do
-
+    cart = Cart.create
+    ruby = products(:ruby)
+    one = products(:one)
+    cart.add_product(ruby).save
+    cart.add_product(ruby).save
+    cart.add_product(one).save
+    assert_equal 2, cart.line_items.count
+    assert_equal 2, cart.line_items[0].quantity
+    assert_equal 1, cart.line_items[1].quantity
   end
 end
