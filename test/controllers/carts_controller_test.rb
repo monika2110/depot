@@ -57,7 +57,7 @@ class CartsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to store_index_url
   end
 
-  test "should add unique products and duplicate " do
+  test "should add unique and duplicate products" do
     cart = Cart.create
     ruby = products(:ruby)
     one = products(:one)
