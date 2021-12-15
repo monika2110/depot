@@ -11,7 +11,7 @@
 
 <body>
 <header class="main">
-  <figure id="count" align="right"><%= "You've visited this page #{pluralize(@counter, "time")}" %></figure>
+  <figure id="count" align="right"><%= "You've visited this page #{pluralize(session[:counter], "time")}" %></figure>
   <%= image_tag 'logo.svg', alt: 'The Pragmatic Bookshelf' %>
   <h1><%= @page_title %></h1>
 </header>
@@ -19,7 +19,7 @@
   <nav class="side_nav">
 
     <div id="time">
-      <%= @time %></div>
+      <%= set_time(@time) %></div>
 
     <time id="cart" class="carts">
       <%= render_if @cart && @cart.line_items.any?, @cart %>
