@@ -1,6 +1,8 @@
 class StoreController < ApplicationController
+  before_action :count
   include CurrentCart
-  before_action :set_cart, :count
+  before_action :set_cart
+
 
 
 
