@@ -5,7 +5,7 @@ module ApplicationHelper
     end
   end
 
-  def set_time (time)
-    time  = Time.now
+  def set_time
+     Time.now
   end
 end

@@ -19,7 +19,7 @@
   <nav class="side_nav">
 
     <div id="time">
-      <%= set_time(@time) %></div>
+      <%= set_time %></div>
 
     <time id="cart" class="carts">
       <%= render_if @cart && @cart.line_items.any?, @cart %>
