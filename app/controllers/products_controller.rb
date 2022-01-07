@@ -18,7 +18,14 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    @reviews = Review.where(product_id: @product.id)
+    if @reviews.blank?
+      @average_rating = "No reviews yet"
+    else
+      @average_rating = @reviews.average(:rating)
+    end
   end
+
 
   # GET /products/new
   def new
@@ -101,5 +108,3 @@ class ProductsController < ApplicationController
   end
 
 end
-
-

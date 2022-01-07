@@ -8,7 +8,7 @@ one:
   price: 9.99
 
 two:
-  title: MyString
+  title: MyString2
   description: MyText
   image_url: lorem.jpg
   price: 9.99

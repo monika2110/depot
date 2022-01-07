@@ -1,0 +1,14 @@
+<ol type="1"> Best sellers:
+
+    <% @products.each do |product| %>
+        <li>
+          <p>
+          <%= product.title %>
+            <%=product.add_sold_items %>
+          </p>
+
+        </li>
+  <% end %>
+</ol>
+
+<%= render partial: "products/counter" %>

@@ -11,6 +11,7 @@ class StoreController < ApplicationController
     @products = Product.order(:title)
   end
 
+
   private
   def count
     if session[:counter].nil?
