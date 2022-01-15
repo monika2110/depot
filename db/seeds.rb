@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 Product.delete_all
 Product.create!(title: 'Docker for Rails Developers',
                 description:
-                  %{<p>
+                  %(<p>
       <em>Build, Ship, and Run Your Applications Everywhere</em>
       Docker does for DevOps what Rails did for web development—it gives you
       a new set of superpowers. Gone are “works on my machine” woes and lengthy
@@ -11,13 +13,13 @@ Product.create!(title: 'Docker for Rails Developers',
       fundamental to software development. Go from zero all the way to production
       as Docker transforms the massive leap of deploying your app in the cloud
       into a baby step.
-      </p>},
+      </p>),
                 image_url: 'ridocker.jpg',
                 price: 38.00)
 # . . .
 Product.create!(title: 'Build Chatbot Interactions',
                 description:
-                  %{<p>
+                  %(<p>
       <em>Responsive, Intuitive Interfaces with Ruby</em>
       The next step in the evolution of user interfaces is here.
       Chatbots let your users interact with your service in their
@@ -28,14 +30,14 @@ Product.create!(title: 'Build Chatbot Interactions',
       From novices to experts, chatbots are an area in which everyone
       can participate. Exercise your creativity by creating chatbot
       skills for communicating, information, and fun.
-      </p>},
+      </p>),
                 image_url: 'dpchat.jpg',
                 price: 20.00)
 # . . .
 
 Product.create!(title: 'Programming Crystal',
                 description:
-                  %{<p>
+                  %(<p>
       <em>Create High-Performance, Safe, Concurrent Apps</em>
       Crystal is for Ruby programmers who want more performance or for
       developers who enjoy working in a high-level scripting environment. Crystal
@@ -45,8 +47,6 @@ Product.create!(title: 'Programming Crystal',
       modern language, combined with the power of types and modern concurrency
       tooling. Now you can write beautiful code that runs faster, scales better,
       and is a breeze to deploy.
-      </p>},
+      </p>),
                 image_url: 'crystal.jpg',
                 price: 40.00)
-
-

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 atom_feed do |feed|
   feed.title "Who bought #{@product.title}"
 
@@ -15,6 +17,7 @@ atom_feed do |feed|
             xhtml.th 'Quantity'
             xhtml.th 'Total Price'
           end
+
           order.line_items.each do |item|
             xhtml.tr do
               xhtml.td item.product.title
@@ -24,8 +27,7 @@ atom_feed do |feed|
           end
           xhtml.tr do
             xhtml.th 'total', colspan: 2
-            xhtml.th number_to_currency \
-              order.line_items.map(&:total_price).sum
+            xhtml.th number_to_currency order.line_items.map(&:total_price).sum
           end
         end
 

@@ -62,7 +62,7 @@ header.main {
 
   nav {
     padding-bottom: 1em;
-    background: #141;
+    background: #114411;
     text-align: center;  // mobile has centered nav
     @media (min-width: 30em) {
       text-align: left; // desktop nav is left-aligned
@@ -72,8 +72,6 @@ header.main {
 
     #time {color: #ffffff
     }
-
-    #top_list {color: white}
 
     #cart {
       article {
@@ -195,4 +193,44 @@ header.main {
     }
   }
 }
+
+
+
+#product_list {
+  article {
+    h2 {
+      margin-top: 0;
+    margin-left: -23px;
+    margin-bottom: 25px}
+    p {
+      span {
+      float: right;
+      margin-left: 20px}
+      }
+    background: white;
+    border-radius: 0.5em;
+    margin: 100px;
+    @media (min-width: 30em) {
+      margin: 0; // desktop doesn't need this margin
+    }
+  }
+
+  ol {
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 20px;
+    @media (min-width: 30em) {
+      padding-right: 1em; // give desktop some extra space
+    }
+    li {
+      margin: 0;
+    }
+  }
+}
+
+
+
+
+
 //

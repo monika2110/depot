@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Cart < ApplicationRecord
   has_many :line_items, dependent: :destroy
 
@@ -12,9 +14,6 @@ class Cart < ApplicationRecord
   end
 
   def total_price
-    line_items.to_a.sum { |item| item.total_price }
+    line_items.to_a.sum(&:total_price)
   end
 end
-
-
-

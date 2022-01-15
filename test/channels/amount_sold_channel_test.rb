@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-class ProductsChannelTest < ActionCable::Channel::TestCase
+class AmountSoldChannelTest < ActionCable::Channel::TestCase
   # test "subscribes" do
   #   subscribe
   #   assert subscription.confirmed?

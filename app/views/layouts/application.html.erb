@@ -32,6 +32,10 @@
       <li><a href="/contact">Contact</a></li>
     </ul>
 
+
+    <div id="product_list" class="product_list" >
+    <%= render partial: "products/counter" %>
+    </div>
   </nav>
   <main class='<%= controller.controller_name %>'>
     <%= yield %>

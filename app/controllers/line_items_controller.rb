@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 #---
 # Excerpted from "Agile Web Development with Rails 6",
 # published by The Pragmatic Bookshelf.
@@ -8,8 +10,8 @@
 #---
 class LineItemsController < ApplicationController
   include CurrentCart
-  before_action :set_cart, only: [:create, :destroy]
-  before_action :set_line_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_cart, only: %i[create destroy]
+  before_action :set_line_item, only: %i[show edit update destroy]
 
   # GET /line_items
   # GET /line_items.json
@@ -19,8 +21,7 @@ class LineItemsController < ApplicationController
 
   # GET /line_items/1
   # GET /line_items/1.json
-  def show
-  end
+  def show; end
 
   # GET /line_items/new
   def new
@@ -28,8 +29,7 @@ class LineItemsController < ApplicationController
   end
 
   # GET /line_items/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /line_items
   # POST /line_items.json
@@ -37,18 +37,7 @@ class LineItemsController < ApplicationController
     product = Product.find(params[:product_id])
     @line_item = @cart.add_product(product)
 
-    respond_to do |format|
-      if @line_item.save
-        format.html { redirect_to store_index_url }
-        format.js { @current_item = @line_item }
-        format.json { render :show,
-                             status: :created, location: @line_item }
-      else
-        format.html { render :new }
-        format.json { render json: @line_item.errors,
-                             status: :unprocessable_entity }
-      end
-    end
+    create_respond_to
   end
 
   # PATCH/PUT /line_items/1
@@ -68,20 +57,16 @@ class LineItemsController < ApplicationController
   # DELETE /line_items/1
   # DELETE /line_items/1.json
   def destroy
-    if @line_item.quantity >= 2
-      @line_item.quantity -=1
-      @line_item.save
-    else
-      @line_item.destroy
-    end
+    quantity
     respond_to do |format|
-      format.html { redirect_to store_index_url, notice: "Line item was successfully destroyed"}
+      format.html { redirect_to store_index_url, notice: 'Line item was successfully destroyed' }
       format.js
       format.json { head :no_content }
     end
   end
 
   private
+
   # Use callbacks to share common setup or constraints between actions.
   def set_line_item
     @line_item = LineItem.find(params[:id])
@@ -91,5 +76,27 @@ class LineItemsController < ApplicationController
   def line_item_params
     params.require(:line_item).permit(:product_id)
   end
-  #...
+
+  def quantity
+    if @line_item.quantity >= 2
+      @line_item.quantity -= 1
+      @line_item.save
+    else
+      @line_item.destroy
+    end
+  end
+
+  def create_respond_to
+    respond_to do |format|
+      if @line_item.save
+        format.html { redirect_to store_index_url }
+        format.js   { @current_item = @line_item }
+        format.json { render :show, status: :created, location: @line_item }
+      else
+        format.html { render :new }
+        format.json { render json: @line_item.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 end
+# ...

@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# comment
 class LineItem < ApplicationRecord
   belongs_to :product
   belongs_to :order, optional: true

@@ -2,12 +2,16 @@
 
 one:
   rating: 5
-  product_id: 9
+  product: one
+
 
 
 
 two:
   rating: 1
-  product_id: 9
+  product: one
+
+
+
 
 
