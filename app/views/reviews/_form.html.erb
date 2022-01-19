@@ -15,6 +15,10 @@
     <%= form.label :rating %>
     <%= form.number_field :rating, min: 1, max: 5 %>
   </div>
+  <div class="field">
+    <%= form.label :comment %>
+    <%= form.text_area :comment, rows: 10, cols: 60 %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>

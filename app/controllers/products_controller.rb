@@ -24,7 +24,7 @@ class ProductsController < ApplicationController
     @average_rating = if @reviews.blank?
                         'No reviews yet'
                       else
-                        @reviews.average(:rating)
+                        @reviews.average(:rating).round(2)
                       end
   end
 

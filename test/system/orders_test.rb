@@ -54,4 +54,5 @@ class OrdersTest < ApplicationSystemTestCase
     assert_equal 'Sam Ruby <depot@example.com>',       mail[:from].value
     assert_equal 'Pragmatic Store Order Confirmation', mail.subject
   end
+
 end

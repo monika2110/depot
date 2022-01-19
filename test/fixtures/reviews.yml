@@ -2,6 +2,7 @@
 
 one:
   rating: 5
+  comment: great
   product: one
 
 
@@ -9,6 +10,7 @@ one:
 
 two:
   rating: 1
+  comment: no
   product: one
 
 

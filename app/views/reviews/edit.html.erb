@@ -1,8 +1,5 @@
 <h1>Edit Review</h1>
 
-<%= form_for([@product, @review]) do |f| %>
-  <label>Rating</label>
-  <%= f.number_field :rating, min: 1, max: 5 %>
-  <%= f.button :submit %>
-<% end %>
+<%= render 'form', review: @review %>
+
 <%= link_to 'Back', product_reviews_path  %>

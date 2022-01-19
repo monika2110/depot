@@ -48,4 +48,29 @@ class ProductsTest < ApplicationSystemTestCase
 
     assert_text 'Product was successfully destroyed'
   end
+
+  test 'check amount_sold' do
+    Product.all.each do |product|
+      product.amount_sold = 0
+      product.save
+    end
+    visit store_index_url
+    click_on 'Add to Cart', match: :first
+    click_on 'Add to Cart', match: :first
+    click_on 'Checkout'
+    fill_in 'order_name', with: 'Dave Thomas'
+    fill_in 'order_address', with: '123 Main Street'
+    fill_in 'order_email', with: 'dave@example.com'
+    assert_no_selector '#order_routing_number'
+    select 'Check', from: 'Pay type'
+    assert_selector '#order_routing_number'
+    fill_in 'Routing #', with: '123456'
+    fill_in 'Account #', with: '987654'
+    click_button 'Place Order'
+    products = Product.all.order(:amount_sold).reverse
+    product = products.first
+    assert_equal 2, product.amount_sold
+    product = products.second
+    assert_equal 0, product.amount_sold
+  end
 end

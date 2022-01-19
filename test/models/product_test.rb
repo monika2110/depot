@@ -74,8 +74,5 @@ class ProductTest < ActiveSupport::TestCase
                  product.errors[:title]
   end
 
-  test 'd' do
-    Order.new
-    assert_equal
-  end
+
 end

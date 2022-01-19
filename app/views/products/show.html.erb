@@ -26,7 +26,10 @@
 </p>
 
 <p>
-  <strong>Review:</strong> <%= @average_rating %>
+  <strong>Review:</strong> <%= @average_rating%>
+  <% if @average_rating.to_i >0 %>
+     <%=link_to "#{@reviews.count} ratings",product_reviews_path(@product)%>
+    <%end %>
 </p>
 <p>
   <%= link_to "Review this product", new_product_review_path(@product) %>
