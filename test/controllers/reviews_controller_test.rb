@@ -19,8 +19,8 @@ class ReviewsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should create review' do
-    assert_difference('Review.count') do
-      post product_reviews_url(@review), params: { review: { rating: @review.rating } }
+     assert_difference('Review.count') do
+      post product_reviews_url(@review), params: { review: { rating: @review.rating }, product: products(:one)}
     end
 
     assert_redirected_to product_url(@product)
