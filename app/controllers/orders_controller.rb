@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class OrdersController < ApplicationController
+  skip_before_action :authorize, only: [:create, :update, :destroy]
   include CurrentCart
   before_action :set_cart, only: %i[new create]
   before_action :ensure_cart_isnt_empty, only: :new
