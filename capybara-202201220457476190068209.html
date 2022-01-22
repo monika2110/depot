@@ -1,0 +1,144 @@
+<html><head>
+  <title>Pragprog Books Online Store</title>
+  
+
+  <link rel="stylesheet" media="all" href="/assets/application-2d6d7aad99f6852e0d36071f7f7315a9d50f4311a48aafba02a28ce33df4d5d7.css" data-turbolinks-track="reload">
+
+  <script src="/packs-test/js/application-e40ad21351464efce957.js" data-turbolinks-track="reload"></script>
+  <script type="text/javascript">
+      I18n.defaultLocale = "en";
+      I18n.locale        = "en";
+  </script>
+  <script src="/packs-test/js/locale_switcher-7ffae50fea77ad191aef.js" data-turbolinks-track="reload"></script>
+
+</head>
+
+<body>
+<header class="main">
+  <aside>
+    <form class="locale" action="/" accept-charset="UTF-8" method="post">
+      <select name="set_locale" id="set_locale" onchange="this.form.submit()"><option selected="selected" value="en">English</option>
+<option value="es">Español</option></select>
+      <input type="submit" name="commit" value="submit" id="submit_locale_change" data-disable-with="submit" style="display: none;">
+</form>  </aside>
+  <img alt="The Pragmatic Bookshelf" src="/assets/logo-84ad9fb14131119a99e76955c5f46f5c54f93e94c59d3e8d6040f1824251da85.svg">
+  <h1></h1>
+</header>
+<section class="content">
+  <nav class="side_nav">
+
+    <div id="time">
+      2022-01-22 04:57:46 +0100</div>
+
+    <time id="cart" class="carts">
+      <article>
+
+  <h2>Your Cart</h2>
+  <table>
+
+    <tbody><tr>
+  <td class="quantity">2</td>
+  <td>MyString</td>
+  <td class="price">$199.98</td>
+  <td><form class="button_to" method="post" action="/en/line_items/980190963" data-remote="true"><input type="hidden" name="_method" value="delete"><input type="submit" value="Remove Item"></form></td>
+</tr>
+
+
+    </tbody><tfoot>
+    <tr>
+      <th colspan="2">Total:</th>
+      <td class="price">$199.98</td>
+    </tr>
+    </tfoot>
+  </table>
+
+  <div class="actions">
+    <form class="button_to" method="post" action="/en/carts/980190963"><input type="hidden" name="_method" value="delete"><input data-confirm="Are you sure?" type="submit" value="Empty cart"></form>
+
+
+    <form class="button_to" method="get" action="/orders/new"><input class="checkout" type="submit" value="Checkout"></form>
+  </div>
+</article>
+
+    </time>
+
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/questions">Questions</a></li>
+      <li><a href="/news">News</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+
+      <nav class="logged_in_nav">
+        <ul>
+          <li><a href="/orders">Orders</a></li>
+          <li><a href="/products">Products</a></li>
+          <li><a href="/users">Users</a></li>
+          <li><form class="button_to" method="post" action="/logout"><input type="hidden" name="_method" value="delete"><input type="submit" value="Logout"></form></li>
+        </ul>
+      </nav>
+
+    <div id="product_list" class="product_list">
+    <article>
+<ol type="1"> <h2>Top List:</h2>
+
+        <li>
+          <p>
+            MyString
+           <span>0 × </span>
+          </p>
+
+        </li>
+        <li>
+          <p>
+            MyString2
+           <span>0 × </span>
+          </p>
+
+        </li>
+        <li>
+          <p>
+            Programming Ruby 1.9
+           <span>0 × </span>
+          </p>
+
+        </li>
+</ol>
+</article>
+
+    </div>
+  </nav>
+  <main class="orders">
+    <section class="depot_form">
+  <h1>Please Enter Your Details</h1>
+  <form action="/orders" accept-charset="UTF-8" method="post">
+
+  <div class="field">
+    <label for="order_name">Name</label>
+    <input size="40" type="text" name="order[name]" id="order_name">
+  </div>
+
+  <div class="field">
+    <label for="order_address">Address</label>
+    <textarea rows="3" cols="40" name="order[address]" id="order_address"></textarea>
+  </div>
+
+  <div class="field">
+    <label for="order_email">E-mail</label>
+    <input size="40" type="email" name="order[email]" id="order_email">
+  </div>
+
+  <div id="pay-type-component"><div><div class="field"><label for="order_pay_type">Pay with</label><select id="order_pay_type" name="order[pay_type]"><option value="">Select a payment method</option><option value="Check">Check</option><option value="Credit card">Credit Card</option><option value="Purchase order">Purchase Order</option></select></div><div><div class="field"><label for="order_routing_number">Routing #</label><input type="password" name="order[routing_number]" id="order_routing_number"></div><div class="field"><label for="order_acount_number">Account #</label><input type="text" name="order[account_number]" id="order_account_number"></div></div></div></div>
+
+  <div class="actions">
+    <input type="submit" name="commit" value="Place Order" data-disable-with="Place Order">
+  </div>
+</form>
+</section>
+<script src="/packs-test/js/pay_type-772ee15903fcf1cac7fc.js"></script>
+
+  </main>
+</section>
+
+
+</body></html>

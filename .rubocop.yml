@@ -1,2 +1,36 @@
 Style/Documentation:
   Enabled: false
+
+Metrics/MethodLength:
+  Exclude:
+    - app/models/order.rb
+    - lib/pago.rb
+    - bin/bundle
+
+Metrics/BlockLength:
+  Exclude:
+    - app/views/products/who_bought.atom.builder
+    - db/schema.rb
+    - test/system/orders_test.rb
+    - config/environments/development.rb
+
+Metrics/AbcSize:
+  Exclude:
+    - app/models/order.rb
+    - lib/pago.rb
+
+Style/GuardClause:
+  Exclude:
+    - app/models/order.rb
+
+Metrics/CyclomaticComplexity:
+  Exclude:
+    - bin/bundle
+
+Metrics/PerceivedComplexity:
+  Exclude:
+    - bin/bundle
+
+Lint/UnusedMethodArgument:
+  Exclude:
+    - lib/pago.rb

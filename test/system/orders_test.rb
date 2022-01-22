@@ -34,7 +34,7 @@ class OrdersTest < ApplicationSystemTestCase
     fill_in 'order_address', with: '123 Main Street'
     fill_in 'order_email', with: 'dave@example.com'
     assert_no_selector '#order_routing_number'
-    select 'Check', from: 'Pay type'
+    select 'Check', from: 'Pay with'
     assert_selector '#order_routing_number'
     fill_in 'Routing #', with: '123456'
     fill_in 'Account #', with: '987654'
@@ -54,5 +54,4 @@ class OrdersTest < ApplicationSystemTestCase
     assert_equal 'Sam Ruby <depot@example.com>',       mail[:from].value
     assert_equal 'Pragmatic Store Order Confirmation', mail.subject
   end
-
 end

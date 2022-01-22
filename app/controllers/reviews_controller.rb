@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ReviewsController < ApplicationController
-  skip_before_action :authorize, only: [:create, :update, :destroy]
+  skip_before_action :authorize, only: %i[create update destroy]
   before_action :set_review, only: %i[show edit update destroy]
   before_action :set_product
 

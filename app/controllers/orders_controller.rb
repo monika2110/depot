@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class OrdersController < ApplicationController
-  skip_before_action :authorize, only: [:create, :update, :destroy]
+  skip_before_action :authorize, only: [:new, :create]
   include CurrentCart
   before_action :set_cart, only: %i[new create]
   before_action :ensure_cart_isnt_empty, only: :new
@@ -98,7 +98,7 @@ class OrdersController < ApplicationController
     respond_to do |format|
       if @order.save
         order_save
-        format.html { redirect_to store_index_url, notice: 'Thank you for your order.' }
+        format.html { redirect_to store_index_url(locale: I18n.locale), notice: I18n.t('.thanks') }
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new }
