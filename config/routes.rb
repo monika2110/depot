@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   get 'admin' => 'admin#index'
   controller :sessions do
@@ -10,7 +12,8 @@ Rails.application.routes.draw do
     get :who_bought, on: :member
     resources :reviews
   end
-  scope '(:locale)', defaults: { locale: 'en'} do
+  resources :support_requests, only: %i[index update]
+  scope '(:locale)', defaults: { locale: 'en' } do
     resources :orders
     resources :line_items
     resources :carts

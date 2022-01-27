@@ -49,15 +49,12 @@ Rails.application.configure do
 
   # Raise exceptions for disallowed deprecations.
   config.active_support.disallowed_deprecation = :raise
+  routes.default_url_options[:host] = 'localhost:3000'
 
   # Tell Active Support which deprecation messages to disallow.
   config.active_support.disallowed_deprecation_warnings = []
-  routes.default_url_options[:host] = 'localhost:3000'
-  config.hosts = []
-
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
-
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
 end

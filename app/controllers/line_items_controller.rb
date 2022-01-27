@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class LineItemsController < ApplicationController
-  skip_before_action :authorize, only: [:create, :update, :destroy]
+  skip_before_action :authorize, only: %i[create update destroy]
   include CurrentCart
   before_action :set_cart, only: %i[create destroy]
   before_action :set_line_item, only: %i[show edit update destroy]
@@ -14,7 +14,7 @@ class LineItemsController < ApplicationController
 
   # GET /line_items/1
   # GET /line_items/1.json
-  def show;
+  def show
     @line_items = LineItem.all
   end
 

@@ -31,6 +31,27 @@
      <%=link_to "#{@reviews.count} ratings",product_reviews_path(@product)%>
     <%end %>
 </p>
+  <table>
+    <thead>
+    <tr>
+      <th>Comments: &nbsp;&nbsp;</th>
+      <th>    Rating:</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @reviews.each do |review| %>
+          <% if review.comment.present? %>
+        <tr>
+          <td><%= review.comment %></td>
+          <td><%= review.rating %></td>
+        </tr>
+     <% end %>
+    <%end %>
+
+    </tbody>
+  </table>
+
 <p>
   <%= link_to "Review this product", new_product_review_path(@product) %>
 </p>

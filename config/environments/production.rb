@@ -3,6 +3,9 @@
 require 'active_support/core_ext/integer/time'
 
 Rails.application.configure do
+  # Prepare the ingress controller used to receive mail
+  # config.action_mailbox.ingress = :relay
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
@@ -31,14 +34,15 @@ Rails.application.configure do
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
-end
-# Enable serving of images, stylesheets, and JavaScripts from an asset server.
-# config.asset_host = 'http://assets.example.com'
+  # Enable serving of images, stylesheets, and JavaScripts from an asset server.
+  # config.asset_host = 'http://assets.example.com'
 
-# Specifies the header that your server uses for sending files.
-# config.action_dispatch.x_sendfile_header = 'X-Sendfile' # for Apache
-# config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
-Rails.application.configure do
+  # Specifies the header that your server uses for sending files.
+  # config.action_dispatch.x_sendfile_header = 'X-Sendfile' # for Apache
+  # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
+  # Prepare the ingress controller used to receive mail
+  # config.action_mailbox.ingress = :relay
+
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
 
@@ -119,7 +123,7 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
-
+  routes.default_url_options[:host] = 'localhost:3000'
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address: 'smtp.gmail.com',
