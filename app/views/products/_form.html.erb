@@ -29,4 +29,9 @@
   <div class="actions">
     <%= form.submit %>
   </div>
+  - <p>
+  - <%= form.label :priority %>:
+  - <%= form.select :priority, (1..10) %>
+  </p>
+
 <% end %>
